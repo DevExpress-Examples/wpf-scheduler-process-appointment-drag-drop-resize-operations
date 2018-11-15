@@ -1,3 +1,13 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [MainWindow.xaml](./CS/SchedulerDragDropResizeExample/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/SchedulerDragDropResizeExample/MainWindow.xaml))
+* [MainWindow.xaml.cs](./CS/SchedulerDragDropResizeExample/MainWindow.xaml.cs) (VB: [MainWindow.xaml](./VB/SchedulerDragDropResizeExample/MainWindow.xaml))
+* [Doctor.cs](./CS/SchedulerDragDropResizeExample/Models/Doctor.cs) (VB: [Doctor.vb](./VB/SchedulerDragDropResizeExample/Models/Doctor.vb))
+* [MedicalAppointment.cs](./CS/SchedulerDragDropResizeExample/Models/MedicalAppointment.cs) (VB: [MedicalAppointment.vb](./VB/SchedulerDragDropResizeExample/Models/MedicalAppointment.vb))
+* [PaymentState.cs](./CS/SchedulerDragDropResizeExample/Models/PaymentState.cs) (VB: [PaymentState.vb](./VB/SchedulerDragDropResizeExample/Models/PaymentState.vb))
+* [MainViewModel.cs](./CS/SchedulerDragDropResizeExample/ViewModel/MainViewModel.cs) (VB: [MainViewModel.vb](./VB/SchedulerDragDropResizeExample/ViewModel/MainViewModel.vb))
+<!-- default file list end -->
 # How to handle appointment drag/drop/resize operations
 
 
