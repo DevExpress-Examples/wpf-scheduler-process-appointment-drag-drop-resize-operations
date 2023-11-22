@@ -1,25 +1,15 @@
-﻿using DevExpress.Mvvm.POCO;
+﻿using DevExpress.Mvvm;
 
-namespace SchedulerDragDropResizeExample
-{
-    public class PaymentState
-    {
-        public static PaymentState Create()
-        {
-            return ViewModelSource.Create(() => new PaymentState());
-        }
-        public static PaymentState Create(int id, string caption, string color) {        
-            PaymentState psi = PaymentState.Create();
-            psi.Id = id;
-            psi.Caption = caption;
-            psi.Color = color;
-            return psi;
+namespace SchedulerDragDropResizeExample {
+    public class PaymentState : BindableBase {
+        public PaymentState(int id, string caption, string color) {
+            Id = id;
+            Caption = caption;
+            Color = color;
         }
 
-        protected PaymentState() { }
-
-        public virtual int Id { get; set; }
-        public virtual string Caption { get; set; }
-        public virtual string Color { get; set; }
+        public int Id { get; set; }
+        public string Caption { get; set; }
+        public string Color { get; set; }
     }
 }
