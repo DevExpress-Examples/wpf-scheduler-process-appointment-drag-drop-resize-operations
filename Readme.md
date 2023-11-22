@@ -3,25 +3,30 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T605963)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-<!-- default file list -->
-*Files to look at*:
 
-* [MainWindow.xaml](./CS/SchedulerDragDropResizeExample/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/SchedulerDragDropResizeExample/MainWindow.xaml))
-* [MainWindow.xaml.cs](./CS/SchedulerDragDropResizeExample/MainWindow.xaml.cs) (VB: [MainWindow.xaml.vb](./VB/SchedulerDragDropResizeExample/MainWindow.xaml.vb))
-* [Doctor.cs](./CS/SchedulerDragDropResizeExample/Models/Doctor.cs) (VB: [Doctor.vb](./VB/SchedulerDragDropResizeExample/Models/Doctor.vb))
-* [MedicalAppointment.cs](./CS/SchedulerDragDropResizeExample/Models/MedicalAppointment.cs) (VB: [MedicalAppointment.vb](./VB/SchedulerDragDropResizeExample/Models/MedicalAppointment.vb))
-* [PaymentState.cs](./CS/SchedulerDragDropResizeExample/Models/PaymentState.cs) (VB: [PaymentState.vb](./VB/SchedulerDragDropResizeExample/Models/PaymentState.vb))
+# WPF Scheduler - Process Appointment Drag/Drop/Resize Operations
+
+This example handles drag and resize appointment events ([DragAppointmentOver](https://docs.devexpress.com/WPF/DevExpress.Xpf.Scheduling.SchedulerControl.DragAppointmentOver), [DropAppointment](https://docs.devexpress.com/WPF/DevExpress.Xpf.Scheduling.SchedulerControl.DropAppointment), and [StartAppointmentResize](https://docs.devexpress.com/WPF/DevExpress.Xpf.Scheduling.SchedulerControl.StartAppointmentResize)) to apply the following restrictions:
+
+* Users cannot drag multiple appointments at a time.
+* Users can move appointments with the **Paid** status only between resources (appointment **Start** and **End** values cannot be changed).
+* Users can resize appointments with the **Unpaid** status only to change the **End** value.
+
+![image](https://github.com/DevExpress-Examples/how-to-handle-appointment-drag-drop-resize-operations-t605963/assets/65009440/b8fe2646-e1d2-4f7b-9f31-0271e7db4b53)
+
+## Files to Review
+
+* [MainWindow.xaml](./CS/SchedulerDragDropResizeExample/MainWindow.xaml)
 * [MainViewModel.cs](./CS/SchedulerDragDropResizeExample/ViewModel/MainViewModel.cs) (VB: [MainViewModel.vb](./VB/SchedulerDragDropResizeExample/ViewModel/MainViewModel.vb))
-<!-- default file list end -->
-# How to handle appointment drag/drop/resize operations
 
+## Documentation
 
-This example illustrates how to handle the <a href="http://help.devexpress.com/#WPF/DevExpressXpfSchedulingSchedulerControl_AppointmentDragtopic">AppointmentDrag</a>, <a href="http://help.devexpress.com/#WPF/DevExpressXpfSchedulingSchedulerControl_AppointmentDroptopic">AppointmentDrop</a> and <a href="http://help.devexpress.com/#WPF/DevExpressXpfSchedulingSchedulerControl_AppointmentResizetopic">AppointmentResize</a> events to apply the following restrictions
+* [Drag and Drop Appointments](https://docs.devexpress.com/WPF/400539/controls-and-libraries/scheduler/drag-and-drop-appointments)
+* [Resize Appointments](https://docs.devexpress.com/WPF/401525/controls-and-libraries/scheduler/resize-appointments)
+* [SchedulerControl.DragAppointmentOver](https://docs.devexpress.com/WPF/DevExpress.Xpf.Scheduling.SchedulerControl.DragAppointmentOver)
+* [SchedulerControl.DropAppointment](https://docs.devexpress.com/WPF/DevExpress.Xpf.Scheduling.SchedulerControl.DropAppointment)
+* [SchedulerControl.StartAppointmentResize](https://docs.devexpress.com/WPF/DevExpress.Xpf.Scheduling.SchedulerControl.StartAppointmentResize)
 
-* single appointment drag;
-* appointments with the Paid status can be moved only between resources, so that their Start and End values remain unchanged;
-* resizing is allowed for Unpaid status to change the End value.<br><br><img src="https://raw.githubusercontent.com/DevExpress-Examples/how-to-handle-appointment-drag-drop-resize-operations-t605963/17.2.3+/media/6c8e0768-1495-4642-810f-7d88747475d7.png"><br><br>
+## More Examples
 
-<br/>
-
-
+* [WPF Scheduler - Drop Data From the Grid Control to Create Appointments](https://github.com/DevExpress-Examples/wpf-scheduler-drop-data-from-grid-control-to-create-appointments)
