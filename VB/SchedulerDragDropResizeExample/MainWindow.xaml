@@ -9,47 +9,44 @@
     xmlns:dxsch="http://schemas.devexpress.com/winfx/2008/xaml/scheduling"
     xmlns:local="clr-namespace:SchedulerDragDropResizeExample"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
     Width="800"
     Height="600"
     MinHeight="400"
     mc:Ignorable="d"
-    DataContext="{dxmvvm:ViewModelSource {x:Type local:MainViewModel}}"
     Title="Scheduler Drag Drop Example">
+    <Window.DataContext>
+        <local:MainViewModel/>
+    </Window.DataContext>
 
     <DockPanel>
-            <dx:GroupFrame Header="Action Modes" DockPanel.Dock="Top">
-            <dxlc:LayoutControl
-            VerticalAlignment="Top"
-                HorizontalAlignment="Left"
-            Orientation="Horizontal">
+        <GroupBox Header="Action Modes" DockPanel.Dock="Top">
+            <dxlc:LayoutControl VerticalAlignment="Top"
+                                HorizontalAlignment="Left"
+                                Orientation="Horizontal">
                 <dxlc:LayoutItem Label="Drag: " Padding="5">
-                <dxe:ComboBoxEdit Width="120"
-                EditValue="{DXBinding '@ElementName(scheduler).AppointmentDragMode', UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
-                ItemsSource="{dxe:EnumItemsSource EnumType=dxsch:AppointmentDragResizeMode}" />
+                    <dxe:ComboBoxEdit Width="120"
+                                      EditValue="{DXBinding '@e(scheduler).AppointmentDragMode', UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                      ItemsSource="{dxe:EnumItemsSource EnumType=dxsch:AppointmentDragResizeMode}" />
                 </dxlc:LayoutItem>
                 <dxlc:LayoutItem Label="Resize: " Padding="5">
                     <dxe:ComboBoxEdit Width="120" 
-                EditValue="{DXBinding '@ElementName(scheduler).AppointmentResizeMode', UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
-                ItemsSource="{dxe:EnumItemsSource EnumType=dxsch:AppointmentDragResizeMode}" />
+                                      EditValue="{DXBinding '@e(scheduler).AppointmentResizeMode', UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                      ItemsSource="{dxe:EnumItemsSource EnumType=dxsch:AppointmentDragResizeMode}" />
                 </dxlc:LayoutItem>
             </dxlc:LayoutControl>
-        </dx:GroupFrame>
+        </GroupBox>
 
-        <dxsch:SchedulerControl x:Name="scheduler" GroupType="Resource" AppointmentDragMode="Precise">
+        <dxsch:SchedulerControl x:Name="scheduler" GroupType="Resource" AppointmentDragMode="SnapToCell">
             <dxmvvm:Interaction.Behaviors>
-                <dxmvvm:EventToCommand
-                    Command="{Binding OnAppointmentDragCommand}"
-                    EventName="AppointmentDrag"
-                    PassEventArgsToCommand="True" />
-                <dxmvvm:EventToCommand
-                    Command="{Binding OnAppointmentDropCommand}"
-                    EventName="AppointmentDrop"
-                    PassEventArgsToCommand="True" />
-                <dxmvvm:EventToCommand
-                    Command="{Binding OnAppointmentResizeCommand}"
-                    EventName="AppointmentResize"
-                    PassEventArgsToCommand="True" />
+                <dxmvvm:EventToCommand EventName="DragAppointmentOver"
+                                       Command="{Binding OnDragAppointmentOverCommand}"
+                                       PassEventArgsToCommand="True" />
+                <dxmvvm:EventToCommand EventName="DropAppointment"
+                                       Command="{Binding OnDropAppointmentCommand}"
+                                       PassEventArgsToCommand="True" />
+                <dxmvvm:EventToCommand EventName="StartAppointmentResize"
+                                       Command="{Binding OnStartAppointmentResizeCommand}"
+                                       PassEventArgsToCommand="True" />
             </dxmvvm:Interaction.Behaviors>
             <dxsch:SchedulerControl.DataSource>
                 <dxsch:DataSource
@@ -69,7 +66,6 @@
                             Start="StartTime"
                             Subject="PatientName"
                             Type="Type">
-                            <dxsch:CustomFieldMapping Mapping="FixedTime" Name="FixedTime" />
                             <dxsch:CustomFieldMapping Mapping="Note" Name="Note" />
                         </dxsch:AppointmentMappings>
                     </dxsch:DataSource.AppointmentMappings>
