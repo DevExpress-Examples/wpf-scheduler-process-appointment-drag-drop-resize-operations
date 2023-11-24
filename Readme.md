@@ -12,7 +12,7 @@ This example handles drag and resize appointment events ([DragAppointmentOver](h
 * Users can move appointments with the **Paid** status only between resources (appointment **Start** and **End** values cannot be changed).
 * Users can resize appointments with the **Unpaid** status only to change the **End** value.
 
-![image](https://github.com/DevExpress-Examples/how-to-handle-appointment-drag-drop-resize-operations-t605963/assets/65009440/b8fe2646-e1d2-4f7b-9f31-0271e7db4b53)
+![image](https://github.com/DevExpress-Examples/how-to-handle-appointment-drag-drop-resize-operations-t605963/assets/65009440/b8fe2646-e1d2-4f7b-9f31-0271e7db4b53) 
 
 ## Files to Review
 
