@@ -42,7 +42,7 @@ Namespace SchedulerDragDropResizeExample
 
         <Command>
         Public Sub OnDragAppointmentOver(ByVal e As DragAppointmentOverEventArgs)
-            If e.DragAppointments.Count > 1 Then e.Effects = System.Windows.DragDropEffects.None
+            If e.DragAppointments.Count > 1 Then e.Effects = Windows.DragDropEffects.None
         End Sub
 
         <Command>
